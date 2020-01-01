@@ -29,7 +29,7 @@ router.delete('/:id', (req, res) => {
         .then(() => res.send('exercise deleted')).catch((error) => res.status(400).send(error))
 })
 
-router.patch('/update/:id', (req, res) => {
+router.post('/update/:id', (req, res) => {
     Exercise.findById(req.params.id)
         .then((exercise) => {
             exercise.name = req.body.name

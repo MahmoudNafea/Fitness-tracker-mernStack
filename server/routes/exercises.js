@@ -18,14 +18,14 @@ router.get('/exercise', (req, res) => {
     // res.send(req.body)
 })
 
-router.get('/:id', (req, res) => {
+router.get('/exercise/:id', (req, res) => {
     Exercise.findById(req.params.id)
         .then((exercise) => res.send(exercise))
         .catch((error) => res.send(error))
 })
 
 router.delete('/:id', (req, res) => {
-    Exercise.findOneAndDelete(req.params.id)
+    Exercise.findByIdAndDelete(req.params.id)
         .then(() => res.send('exercise deleted')).catch((error) => res.status(400).send(error))
 })
 

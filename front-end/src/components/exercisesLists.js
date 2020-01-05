@@ -21,7 +21,7 @@ class ExerciseLists extends Component {
     }
 
     deleteExercise(id) {
-        axios.delete('http://localhost:5000/:id')
+        axios.delete('http://localhost:5000/' + id)
             .then((res) => console.log(res.data))
         this.setState((prevState) => {
             return ({ exercises: prevState.exercises.filter(el => el._id !== id) })

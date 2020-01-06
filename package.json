@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    // "server": "node server.js",
-    // "front-end": " cd front-end && npm start",
-    // "start": "concurrently \" npm run server\" \"npm run front-end\"",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd front-end && npm install --only=dev && npm install && npm run build"

@@ -13,7 +13,7 @@ app.use(usersRouter);
 app.use(exercisesRouter);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static("../front-end/build"))
+    app.use(express.static("front-end/build"))
 }
 
 app.listen(port, () => {

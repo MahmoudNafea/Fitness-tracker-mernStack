@@ -8,7 +8,7 @@ const exercisesRouter = require('./routes/exercises');
 const app = express();
 const port = process.env.port || 5000;
 
-const publicPath = path.join(__dirname, '.', 'public')
+const publicPath = path.join(__dirname, '.', 'front-end/build')
 
 app.use(express.static(publicPath))
 

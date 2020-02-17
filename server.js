@@ -8,7 +8,7 @@ const exercisesRouter = require('./routes/exercises');
 const app = express();
 const port = process.env.port || 5000;
 
-const publicPath = path.join(__dirname, '.', 'front-end/build')
+const publicPath = path.join(__dirname, '.', './front-end/build')
 
 app.use(express.static(publicPath))
 
@@ -18,7 +18,7 @@ app.use(usersRouter);
 app.use(exercisesRouter);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static("front-end/build"))
+    app.use(express.static("./front-end/build"))
 }
 // app.use(express.static(path.join(__dirname, "front-end", "build")))
 

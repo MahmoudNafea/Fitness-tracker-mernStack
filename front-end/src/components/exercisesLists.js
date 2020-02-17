@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Exercise from './exercise';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
 class ExerciseLists extends Component {
 
     constructor(props) {

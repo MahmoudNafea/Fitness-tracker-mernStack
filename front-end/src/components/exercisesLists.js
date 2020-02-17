@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Exercise from './exercise';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+require('dotenv').config();
+
 class ExerciseLists extends Component {
 
     constructor(props) {
@@ -11,14 +13,14 @@ class ExerciseLists extends Component {
     state = { exercises: [] }
 
     componentDidMount() {
-        axios.get('/exercise')
+        axios.get(`${process.env.BASE_URL}exercise`)
             .then((res) => {
                 this.setState({ exercises: res.data })
             }).catch(error => console.log(error))
     }
 
     deleteExercise(id) {
-        axios.delete('/' + id)
+        axios.delete(`${process.env.BASE_URL}` + id)
             .then((res) => console.log(res.data))
         this.setState((prevState) => {
             return ({ exercises: prevState.exercises.filter(el => el._id !== id) })

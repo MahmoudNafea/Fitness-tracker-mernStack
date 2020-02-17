@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+require('dotenv').config()
 class EditExercise extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +22,7 @@ class EditExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get('/exercise/' + this.props.match.params.id)
+        axios.get(`${process.env.BASE_URL}exercise/` + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: response.data.name,
@@ -35,7 +36,7 @@ class EditExercise extends Component {
                 console.log('error' + error);
             })
 
-        axios.get('/users/')
+        axios.get(`${process.env.BASE_URL}users/`)
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -85,7 +86,7 @@ class EditExercise extends Component {
 
         console.log(exercise);
 
-        axios.post('/update/' + this.props.match.params.id, exercise)
+        axios.post(`${process.env.BASE_URL}update/` + this.props.match.params.id, exercise)
             .then(res => console.log(res.data));
 
         window.location = '/';
@@ -94,7 +95,7 @@ class EditExercise extends Component {
     render() {
         return (
             <div>
-                <h3>Edit Exercise Log</h3>
+                <h3>Edit Exercise </h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Username: </label>

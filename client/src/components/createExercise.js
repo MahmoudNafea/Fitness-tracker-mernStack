@@ -58,7 +58,7 @@ class CreateExercise extends Component {
         console.log(exercise)
         axios.post(`${process.env.BASE_URL}exercise/add`, exercise)
             .then(res => console.log(res.data))
-        window.location = '/'
+        window.location = `${process.env.BASE_URL}`
     }
     render() {
         return (

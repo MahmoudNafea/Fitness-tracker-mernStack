@@ -13,14 +13,14 @@ class ExerciseLists extends Component {
     state = { exercises: [] }
 
     componentDidMount() {
-        axios.get(`${process.env.BASE_URL}exercise`)
+        axios.get(`${process.env.REACT_APP.BASE_URL}/exercise`)
             .then((res) => {
                 this.setState({ exercises: res.data })
             }).catch(error => console.log(error))
     }
 
     deleteExercise(id) {
-        axios.delete(`${process.env.BASE_URL}` + id)
+        axios.delete(`${process.env.REACT_APP.BASE_URL}` + id)
             .then((res) => console.log(res.data))
         this.setState((prevState) => {
             return ({ exercises: prevState.exercises.filter(el => el._id !== id) })

@@ -23,7 +23,7 @@ class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.BASE_URL}users`)
+        axios.get(`${process.env.REACT_APP.BASE_URL}/users`)
             .then((res) => {
                 if (res.data.length > 0) {
                     this.setState({
@@ -56,9 +56,9 @@ class CreateExercise extends Component {
             date: this.state.date
         }
         console.log(exercise)
-        axios.post(`${process.env.BASE_URL}exercise/add`, exercise)
+        axios.post(`${process.env.REACT_APP.BASE_URL}/exercise/add`, exercise)
             .then(res => console.log(res.data))
-        window.location = `${process.env.BASE_URL}`
+        window.location = `${process.env.REACT_APP.BASE_URL}/`
     }
     render() {
         return (

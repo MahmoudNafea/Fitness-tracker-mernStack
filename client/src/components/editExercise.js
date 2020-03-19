@@ -22,7 +22,7 @@ class EditExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP.BASE_URL}/exercise/` + this.props.match.params.id)
+        axios.get(`${process.env.REACT_APP_BASE_URL}/exercise/` + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: response.data.name,
@@ -36,7 +36,7 @@ class EditExercise extends Component {
                 console.log('error' + error);
             })
 
-        axios.get(`${process.env.REACT_APP.BASE_URL}/users/`)
+        axios.get(`${process.env.REACT_APP_BASE_URL}/users/`)
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -86,10 +86,10 @@ class EditExercise extends Component {
 
         console.log(exercise);
 
-        axios.post(`${process.env.REACT_APP.BASE_URL}/update/` + this.props.match.params.id, exercise)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/update/` + this.props.match.params.id, exercise)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = 'http://localhost:3000/';
     }
 
     render() {

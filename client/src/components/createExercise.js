@@ -58,7 +58,7 @@ class CreateExercise extends Component {
         console.log(exercise)
         axios.post(`${process.env.REACT_APP_BASE_URL}/exercise/add`, exercise)
             .then(res => console.log(res.data))
-        window.location = 'http://localhost:3000/'
+        window.location = `${process.env.REACT_APP_BASE_URL}/`
     }
     render() {
         return (

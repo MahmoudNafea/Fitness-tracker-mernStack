@@ -89,7 +89,7 @@ class EditExercise extends Component {
         axios.post(`${process.env.REACT_APP_BASE_URL}/update/` + this.props.match.params.id, exercise)
             .then(res => console.log(res.data));
 
-        window.location = 'http://localhost:3000/';
+        window.location = `${process.env.REACT_APP_BASE_URL}`;
     }
 
     render() {

@@ -6,7 +6,7 @@ const usersRouter = require('./routes/users');
 const exercisesRouter = require('./routes/exercises');
 
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 
 app.use(express.static(path.join("build")))

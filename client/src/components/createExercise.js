@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -58,7 +59,6 @@ class CreateExercise extends Component {
         console.log(exercise)
         axios.post(`${process.env.REACT_APP_BASE_URL}/exercise/add`, exercise)
             .then(res => console.log(res.data))
-        window.location = `${process.env.REACT_APP_BASE_URL}/`
     }
     render() {
         return (

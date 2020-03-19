@@ -11,7 +11,7 @@ const port = process.env.port || 5000;
 
 app.use(express.static(path.join("build")))
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(usersRouter);
 app.use(exercisesRouter);
